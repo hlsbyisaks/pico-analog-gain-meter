@@ -8,7 +8,6 @@ import (
 )
 
 func voltageToDB(vIn, vOut float64) float64 {
-
 	if vIn <= 0 || vOut <= 0 {
 		return 0
 	}
@@ -26,9 +25,8 @@ func main() {
 	adc1.Configure(machine.ADCConfig{})
 
 	for {
-		time.Sleep(1 * time.Second)
+		time.Sleep(500 * time.Millisecond)
 		println()
-		println("Device:", machine.Device)
 
 		rawVIn := adc0.Get() // Raw, 0-65535
 		rawVOut := adc1.Get()
